@@ -87,7 +87,7 @@ const JoinButton = styled.button`
   gap: 5px;
 
   & p {
-    font-family: Otomanopee One;
+    font-family: "Otomanopee One";
     font-style: normal;
     font-weight: 400;
   }
@@ -119,7 +119,7 @@ const ContactHeader = styled.p`
 `;
 
 const ContactAddress = styled.p`
-  font-family: Otomanopee One;
+  font-family: "Otomanopee One";
   font-size: 32px;
   font-style: normal;
   font-weight: 400;

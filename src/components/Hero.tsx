@@ -135,7 +135,7 @@ const HeroContainer = styled.section`
 
 const TextContent = styled.div`
   color: #392c19;
-  font-family: Otomanopee One;
+  font-family: "Otomanopee One";
   font-style: normal;
   font-weight: 400;
   line-height: normal;
