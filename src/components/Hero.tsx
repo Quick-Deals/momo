@@ -51,10 +51,11 @@ export default Hero;
 const HeroContainer = styled.section`
   display: flex;
   justify-content: space-between;
-  min-height: MAX(100vh, 1024px);
+  height: 100vh;
+  min-height: 1024px;
   padding: 2em 10%;
   padding-right: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   gap: 4em;
   z-index: 0;
@@ -70,6 +71,7 @@ const HeroContainer = styled.section`
     background: url(${heroTop}) no-repeat;
     background-position: top center;
     background-size: contain;
+    z-index: 2;
   }
   &::after {
     position: absolute;
@@ -118,9 +120,10 @@ const HeroContainer = styled.section`
     align-items: flex-start;
 
     & span.heroTop2 {
-      width: 60%;
+      width: 50%;
       height: 20%;
-      background-position: bottom left;
+      background-position: top left;
+      z-index: 0;
     }
     & span.heroBottom {
       width: 60%;

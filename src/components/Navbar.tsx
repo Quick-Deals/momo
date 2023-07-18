@@ -41,6 +41,30 @@ const Navbar = () => {
       setIsOpen(false);
     }
   }, [scrolled]);
+
+  useEffect(() => {
+    const widthOnLoad = window.innerWidth;
+
+    if (widthOnLoad > 860 && isOpen) {
+      return;
+    }
+    if (widthOnLoad > 860 && !isOpen) {
+      setIsOpen(true);
+    }
+
+    window.onresize = () => {
+      if (window.innerWidth > 860 && isOpen) {
+        return;
+      }
+      if (window.innerWidth > 860 && !isOpen) {
+        setIsOpen(true);
+        return;
+      } else {
+        setIsOpen(false);
+      }
+    };
+  }, [isOpen]);
+
   return (
     <Nav className={scrolled ? "scrolled" : ""}>
       <Logo>
@@ -104,10 +128,15 @@ const Nav = styled.nav`
 
   @media screen and (max-width: 860px) {
     padding: 1em 5%;
-
     & .toggleBtn {
       display: flex;
       cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: 860px) {
+    & .toggleBtn {
+      display: none;
     }
   }
 `;
@@ -163,6 +192,17 @@ const LinkContainer = styled.ul`
       width: 100%;
       background: #dacab1;
       padding: 3em;
+    }
+  }
+
+  @media screen and (min-width: 860px) {
+    &.opened {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      /* width: 100%;
+      background: #dacab1; */
+      /* padding: 3em; */
     }
   }
 `;
