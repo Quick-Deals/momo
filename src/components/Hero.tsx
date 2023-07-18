@@ -114,7 +114,7 @@ const HeroContainer = styled.section`
   }
 
   @media screen and (max-width: 860px) {
-    padding: 60% 2em 2em;
+    padding: 2em;
     min-width: 90%;
     justify-content: flex-start;
     align-items: flex-start;
@@ -152,7 +152,7 @@ const TextContent = styled.div`
 
   @media screen and (max-width: 860px) {
     min-width: 100%;
-    margin: 0 auto;
+    margin:auto;
   }
 `;
 const Header = styled.h2`
