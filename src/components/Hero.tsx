@@ -52,7 +52,6 @@ const HeroContainer = styled.section`
   display: flex;
   justify-content: space-between;
   min-height: MAX(100vh, 1024px);
-  max-height: 1024px;
   padding: 2em 10%;
   padding-right: 0;
   overflow-x: hidden;
@@ -112,7 +111,12 @@ const HeroContainer = styled.section`
     background-size: contain;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
+    padding: 60% 2em 2em;
+    min-width: 90%;
+    justify-content: flex-start;
+    align-items: flex-start;
+
     & span.heroTop2 {
       width: 60%;
       height: 20%;
@@ -142,6 +146,11 @@ const TextContent = styled.div`
   align-items: flex-start;
   gap: 12px;
   margin-right: auto;
+
+  @media screen and (max-width: 860px) {
+    min-width: 100%;
+    margin: 0 auto;
+  }
 `;
 const Header = styled.h2`
   font-family: Cherry Bomb One;
