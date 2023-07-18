@@ -51,11 +51,11 @@ export default Hero;
 const HeroContainer = styled.section`
   display: flex;
   justify-content: space-between;
-  min-height: MAX(100vh, 1024px);
-  max-height: 1024px;
+  height: 100vh;
+  min-height: 1024px;
   padding: 2em 10%;
   padding-right: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   gap: 4em;
   z-index: 0;
@@ -71,6 +71,7 @@ const HeroContainer = styled.section`
     background: url(${heroTop}) no-repeat;
     background-position: top center;
     background-size: contain;
+    z-index: 2;
   }
   &::after {
     position: absolute;
@@ -112,11 +113,17 @@ const HeroContainer = styled.section`
     background-size: contain;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
+    padding: 60% 2em 2em;
+    min-width: 90%;
+    justify-content: flex-start;
+    align-items: flex-start;
+
     & span.heroTop2 {
-      width: 60%;
+      width: 50%;
       height: 20%;
-      background-position: bottom left;
+      background-position: top left;
+      z-index: 0;
     }
     & span.heroBottom {
       width: 60%;
@@ -142,6 +149,11 @@ const TextContent = styled.div`
   align-items: flex-start;
   gap: 12px;
   margin-right: auto;
+
+  @media screen and (max-width: 860px) {
+    min-width: 100%;
+    margin: 0 auto;
+  }
 `;
 const Header = styled.h2`
   font-family: Cherry Bomb One;

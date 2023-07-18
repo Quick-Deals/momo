@@ -106,6 +106,7 @@ const TextContentContainer = styled.div`
   min-width: MIN(90%, 240px);
   z-index: 1;
   position: relative;
+
   &::before {
     content: "";
     position: absolute;
@@ -114,7 +115,7 @@ const TextContentContainer = styled.div`
     width: 383.393px;
     height: 319px;
     background-size: contain;
-    z-index: 0;
+    z-index: -1;
   }
 
   &.left {
@@ -128,6 +129,19 @@ const TextContentContainer = styled.div`
     margin-left: auto;
     &::before {
       left: -100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: auto;
+
+    &.left{
+      
+    }
+
+    &::before {
+      
     }
   }
 `;
