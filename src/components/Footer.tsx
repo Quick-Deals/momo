@@ -18,6 +18,8 @@ const FooterContainer = styled.footer`
   min-height: 193px;
   text-align: center;
   display: flex;
+
+
 `;
 
 const Text = styled.p`
@@ -27,6 +29,10 @@ const Text = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  max-width:678px;
+  max-width: 678px;
   margin: auto;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;

@@ -72,6 +72,9 @@ const Header = styled.h2`
   line-height: normal;
   margin: 75px 0;
 
+  @media screen and (max-width: 768px) {
+    margin: 1em 0;
+  }
 `;
 
 const Cards = styled.div`
@@ -85,17 +88,10 @@ const Cards = styled.div`
 
   &.left {
     margin-right: auto;
-    /* align-self: flex-start; */
-    /* &::before {
-      right: 0%;
-    } */
   }
 
   &.right {
     margin-left: auto;
-    /* &::before {
-      left: 10%;
-    } */
   }
 `;
 

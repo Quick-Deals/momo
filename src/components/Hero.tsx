@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import {
-    heroBottom,
+  heroBottom,
   heroBottomLeft,
   heroTextBg,
   heroTop,
@@ -41,7 +41,7 @@ const Hero = () => {
         <span className="polygon3" />
       </ImageContainer>
 
-      <span className="heroBottom"/>
+      <span className="heroBottom" />
     </HeroContainer>
   );
 };
@@ -110,6 +110,19 @@ const HeroContainer = styled.section`
     background: url(${heroBottom}) no-repeat;
     background-position: top right;
     background-size: contain;
+  }
+
+  @media screen and (max-width: 768px) {
+    & span.heroTop2 {
+      width: 60%;
+      height: 20%;
+      background-position: bottom left;
+    }
+    & span.heroBottom {
+      width: 60%;
+      height: 20%;
+      background-position: bottom center;
+    }
   }
 `;
 
