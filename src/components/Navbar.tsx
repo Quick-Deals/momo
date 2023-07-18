@@ -14,7 +14,7 @@ const Navbar = () => {
           <a href="">Home</a>
         </NavLinks>
         <NavLinks>
-          <a href="">Why Momo</a>
+          <a href="#features">Why Momo</a>
         </NavLinks>
         <BuyBtn>
           <p>Buy Momo</p>
@@ -30,7 +30,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 2em 10%;
-  position: fixed;
+  position: absolute;
   top:0;
   left: 0;
   width: 100%;
