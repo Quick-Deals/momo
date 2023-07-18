@@ -1,9 +1,38 @@
 import { styled } from "styled-components";
 import { joinbutton, momoLogo } from "../assets";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const scrollPosition =
+      window.scrollY ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop;
+    if (scrollPosition > 0) {
+      setScrolled(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop =
+        window.scrollY ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+      setScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <Nav>
+    <Nav className={scrolled ? "scrolled" : ""}>
       <Logo>
         <span className="logo"></span>
         <span>Momo</span>
@@ -30,11 +59,16 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 2em 10%;
-  position: absolute;
-  top:0;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 99;
+
+  &.scrolled {
+    background: #dacab1;
+    filter: drop-shadow(2px 6px 10px rgba(0, 0, 0, 0.2));
+  }
 
   & a {
     text-decoration: none;

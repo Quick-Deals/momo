@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <ContactContainer>
       <JoinContainer>
-        <JoinHeader>Join Our Strong community</JoinHeader>
+        <JoinHeader>Join Our Strong Community</JoinHeader>
         <JoinButtons>
           <JoinButton>
             <p>Join us</p> <BiLogoTwitter size={25} />
@@ -45,6 +45,11 @@ const JoinContainer = styled.div`
   align-items: center;
   width: 100%;
   gap: 18px;
+
+  @media screen and (max-width: 768px) {
+    min-height: 300px;
+    gap: 2em;
+  }
 `;
 
 const JoinHeader = styled.h2`
@@ -55,6 +60,11 @@ const JoinHeader = styled.h2`
   font-weight: 400;
   line-height: normal;
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+    line-height: 100%;
+  }
 `;
 
 const JoinButtons = styled.div`
@@ -102,6 +112,10 @@ const ContactHeader = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  @media screen and (max-width: 768px){
+    font-size: 32px;
+  }
 `;
 
 const ContactAddress = styled.p`
@@ -120,6 +134,10 @@ const ContactAddress = styled.p`
   white-space: pre-wrap;
   max-width: 100%;
   line-break: anywhere;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const Copy = styled.img``;
