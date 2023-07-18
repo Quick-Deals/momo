@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { joinbutton, momoLogo } from "../assets";
+import { heroTop2, joinbutton, momoLogo } from "../assets";
 import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
@@ -66,39 +66,41 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <Nav className={scrolled ? "scrolled" : ""}>
-      <Logo>
-        <span className="logo"></span>
-        <span>Momo</span>
-      </Logo>
+    <>
+      <Nav className={scrolled ? "scrolled" : ""}>
+        <Logo>
+          <span className="logo"></span>
+          <span>Momo</span>
+        </Logo>
 
-      <LinkContainer className={isOpen ? "opened" : ""}>
-        <NavLinks>
-          <a href="">Home</a>
-        </NavLinks>
-        <NavLinks>
-          <a href="#features">Why Momo</a>
-        </NavLinks>
-        <BuyBtn>
-          <p>Buy Momo</p>
-        </BuyBtn>
-      </LinkContainer>
-      {isOpen ? (
-        <Close
-          size={24}
-          onClick={toggle}
-          className="toggleBtn"
-          color={"#392d19"}
-        />
-      ) : (
-        <Hamburger
-          size={24}
-          onClick={toggle}
-          className="toggleBtn"
-          color={"#392d19"}
-        />
-      )}
-    </Nav>
+        <LinkContainer className={isOpen ? "opened" : ""}>
+          <NavLinks>
+            <a href="">Home</a>
+          </NavLinks>
+          <NavLinks>
+            <a href="#features">Why Momo</a>
+          </NavLinks>
+          <BuyBtn>
+            <p>Buy Momo</p>
+          </BuyBtn>
+        </LinkContainer>
+        {isOpen ? (
+          <Close
+            size={24}
+            onClick={toggle}
+            className="toggleBtn"
+            color={"#392d19"}
+          />
+        ) : (
+          <Hamburger
+            size={24}
+            onClick={toggle}
+            className="toggleBtn"
+            color={"#392d19"}
+          />
+        )}
+      </Nav>
+    </>
   );
 };
 
@@ -125,12 +127,40 @@ const Nav = styled.nav`
     cursor: pointer;
     color: #392c19;
   }
+  & span.heroTop2 {
+    position: relative;
+    width: 0%;
+    height: 0%;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 30%;
+      height: 50%;
+      max-width: 530px;
+      max-height: 530px;
+      background: url(${heroTop2}) no-repeat;
+      background-position: top right;
+      background-size: contain;
+    }
+  }
 
   @media screen and (max-width: 860px) {
     padding: 1em 5%;
     & .toggleBtn {
       display: flex;
       cursor: pointer;
+    }
+
+    & span.heroTop2 {
+      &::before {
+        width: 50%;
+        height: 20%;
+        background-position: top left;
+        z-index: 0;
+      }
     }
   }
 

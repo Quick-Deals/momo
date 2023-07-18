@@ -6,7 +6,7 @@ const Features = () => {
     <Container>
       <Header>Why Momo</Header>
       <Cards className="left">
-        <ImageContainer>{/* <img src={momoHead} alt="" /> */}</ImageContainer>
+        <ImageContainer className="left" />
 
         <TextContentContainer className="right">
           <TextContentHeader>Community Driven</TextContentHeader>
@@ -29,7 +29,7 @@ const Features = () => {
             our horizons and unlock a multitude of exciting opportunities.
           </Text>
         </TextContentContainer>
-        <ImageContainer className="right"></ImageContainer>
+        <ImageContainer className="right" />
       </Cards>
     </Container>
   );
@@ -84,7 +84,7 @@ const Cards = styled.div`
   gap: 2em;
   padding: 2em;
   position: relative;
-  width: 100%;
+  width: 90%;
 
   &.left {
     margin-right: auto;
@@ -92,6 +92,22 @@ const Cards = styled.div`
 
   &.right {
     margin-left: auto;
+  }
+
+  @media screen and (max-width: 860px) {
+    width: 100%;
+    padding: 0 2em;
+    &.left {
+      margin-right: 0;
+    }
+
+    &.right {
+      margin-left: 0;
+    }
+
+    & span.left {
+      display: none;
+    }
   }
 `;
 
@@ -121,34 +137,40 @@ const TextContentContainer = styled.div`
   &.left {
     margin-right: auto;
     &::before {
-      right: -100%;
+      right: -85%;
     }
   }
 
   &.right {
     margin-left: auto;
     &::before {
-      left: -100%;
+      left: -85%;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     width: 100%;
     margin: auto;
 
-    &.left{
-      
+    &.left {
+      margin-right: 0;
+      &::before {
+        left: 100%;
+      }
     }
 
-    &::before {
-      
+    &.right {
+      &::before {
+        display: none;
+        left: -95%;
+      }
     }
   }
 `;
 
 const TextContentHeader = styled.h3`
   color: #392c19;
-  font-family: Otomanopee One;
+  font-family: "Otomanopee One";
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -156,13 +178,13 @@ const TextContentHeader = styled.h3`
 `;
 const Text = styled.p`
   color: #665a49;
-  font-family: Otomanopee One;
+  font-family: "Otomanopee One";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = styled.span`
   position: relative;
 `;
